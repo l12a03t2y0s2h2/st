@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/st/internal/handler/ea"
 	"github.com/st/internal/handler/har"
 	"github.com/st/internal/handler/hosts"
 	"github.com/st/internal/handler/info"
@@ -39,7 +38,6 @@ func Run() {
 		TARGET: target.NewHandler(),
 		HOSTS:  hosts.NewHandler(),
 		HAR:    har.NewHandler(),
-		EA:     ea.NewHandler(),
 	}
 
 	// Get action

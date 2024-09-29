@@ -54,7 +54,7 @@ func (h *Handler) Handle() (string, error) {
 		"-v",        // -v, --verbose Make the operation more talkative
 		"--http1.1", // --http1.1 (HTTP) Tells curl to use HTTP version 1.1
 		"-w",
-		"'%{time_total} sec.'", // time_total The total time, in seconds, that the full operation lasted
+		"'Connect: %{time_connect} TTFB: %{time_starttransfer} Total time: %{time_total}'", // time_total The total time, in seconds, that the full operation lasted
 		fmt.Sprintf("%s://%s%s", domain.Scheme, domain.Host, domain.Path),
 	}
 
