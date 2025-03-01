@@ -33,6 +33,5 @@ func (h *Handler) Handle() (string, error) {
 	octets := strings.Split(ipV4.String(), ".")
 	slices.Reverse(octets)
 
-
 	return fmt.Sprintf("%s%s", strings.Join(octets, "."), ARPA), nil
 }

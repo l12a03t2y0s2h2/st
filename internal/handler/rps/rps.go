@@ -26,7 +26,7 @@ func (h *Handler) Handle() (string, error) {
 		return "", fmt.Errorf("parse requests error > %s", err)
 	}
 
-	since, err := time.Parse(time.DateTime, os.Args[3]) 
+	since, err := time.Parse(time.DateTime, os.Args[3])
 	if err != nil { // "2023-03-30 11:00:00"
 		return "", fmt.Errorf("parse time since error > %s", err)
 	}
@@ -41,6 +41,6 @@ func (h *Handler) Handle() (string, error) {
 	}
 
 	seconds := until.Unix() - since.Unix()
-	
+
 	return fmt.Sprintf("%.2f rps", requests/float64(seconds)), nil
 }
